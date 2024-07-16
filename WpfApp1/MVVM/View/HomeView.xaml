@@ -1,0 +1,135 @@
+﻿<UserControl x:Class="WpfApp1.MVVM.View.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp1.MVVM.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel>
+        <TextBlock Text="Dailies"
+                   Foreground="White"
+                   FontSize="28"
+                   HorizontalAlignment="Left"
+                   Margin="0,0,0,20"/>
+
+        <StackPanel Orientation="Horizontal"
+                    Margin="0,0,0,10">
+            <Border Width="400"
+                    Height="200">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                        <GradientStop Color="#5bc3ff" Offset="0.0"/>
+                        <GradientStop Color="#3aa0ff" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10"
+                                       RadiusY="10"
+                                       Rect="0,0,400,200"/>
+                </Border.Clip>
+
+                <Grid>
+                    <StackPanel>
+                        <TextBlock Text="Verse of the day:"
+                                   Foreground="White"
+                                   FontSize="28"
+                                   Margin="20,10,10,0"/>
+
+                        <TextBlock Text="1 Corinthians 10:13"
+                                   Foreground="White"
+                                   FontSize="18"
+                                   Margin="20,00,10,0"/>
+
+                        <TextBlock Text="No temptation has overtaken you that is not&#x0a;common to man. God is faithful, and he will&#x0a;not let you be tempted beyond your ability,&#x0a;but with the temptation he will also provide&#x0a;the way of escape, that you may be able to..."
+                                   Foreground="LightGray"
+                                   FontSize="18"
+                                   Margin="20,00,10,0"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <Border Width="229"
+                    Height="200"
+                    CornerRadius="10"
+                    Margin="20,0,0,0">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                        <GradientStop Color="#ffc554" Offset="0.0"/>
+                        <GradientStop Color="#ffb73b" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+
+                <StackPanel>
+                    <TextBlock Text="Question of&#x0a;the Day!"
+                               Foreground="White"
+                               FontSize="28"
+                               Margin="20,10,10,0"/>
+
+                    <TextBlock Text="Do you know any&#x0a;verses that can help&#x0a;me with temptation?"
+                               Foreground="White"
+                               FontSize="18"
+                               Margin="20,10,10,10"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+
+
+        <StackPanel>
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="Margin" Value="15,0,0,0"/>
+                </Style>
+            </StackPanel.Resources>
+            
+            <TextBlock Text="Let's catch up!"
+                       Foreground="White"
+                       FontSize="20"
+                       HorizontalAlignment="Left"
+                       Margin="0,0,0,10"/>
+
+            <StackPanel Orientation="Horizontal">
+                <Border Width="150"
+                        Height="150"
+                        Background="#844eff"
+                        CornerRadius="10">
+                    <TextBlock Text="Overdue&#x0a;Verses"
+                                Foreground="White"
+                                FontSize="18"
+                                Margin="20,10,10,0"/>
+                </Border>
+
+                <Border Width="150"
+                        Height="150"
+                        Background="#4e99ff"
+                        CornerRadius="10">
+                    <TextBlock Text="All Verse Packs"
+                                Foreground="White"
+                                FontSize="18"
+                                Margin="20,10,10,0"/>
+                </Border>
+
+                <Border Width="150"
+                        Height="150"
+                        Background="#4eff91"
+                        CornerRadius="10">
+                    <TextBlock Text="All Saved Verses"
+                                Foreground="White"
+                                FontSize="18"
+                                Margin="20,10,10,0"/>
+                </Border>
+
+                <Border Width="150"
+                        Height="150"
+                        Background="#ecff4e"
+                        CornerRadius="10">
+                    <TextBlock Text="All Saved Verses"
+                                Foreground="White"
+                                FontSize="18"
+                                Margin="20,10,10,0"/>
+                </Border>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</UserControl>
