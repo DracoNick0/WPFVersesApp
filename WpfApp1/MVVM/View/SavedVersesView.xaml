@@ -16,36 +16,42 @@
            Margin="10,10,0,10"/>
 
         <WrapPanel Orientation="Horizontal">
-            
+
             <Border Width="300"
                     Height="65"
                     Background="#5bc3ff"
                     CornerRadius="10"
-                    Margin="10,0,0,10">
-                <Grid>
-                    <TextBlock Text="Reference"
-                                Foreground="White"
-                                FontSize="14"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Top"
-                                Margin="10,10,10,10"/>
+                    Margin="10,10,0,10">
+                <Button Background="Transparent"
+                        Command="{Binding VerseViewCommand}">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <TextBlock Text="Reference"
+                                           Foreground="White"
+                                           FontSize="14"
+                                           VerticalAlignment="Top"
+                                           HorizontalAlignment="Left"
+                                           Margin="10,10,10,10"/>
 
-                    <TextBlock Text="Ver"
-                                Foreground="White"
-                                FontSize="14"
-                                HorizontalAlignment="Right"
-                                VerticalAlignment="Top"
-                                Margin="10,10,10,10"/>
+                                <TextBlock Text="Ver"
+                                           Foreground="White"
+                                           FontSize="14"
+                                           VerticalAlignment="Top"
+                                           HorizontalAlignment="Right"
+                                           Margin="10,10,10,10"/>
 
-                    <TextBlock Text="Passage"
-                                Foreground="White"
-                                FontSize="14"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Bottom"
-                                Margin="10,10,10,10"/>
-                </Grid>
+                                <TextBlock Text="Passage"
+                                           Foreground="White"
+                                           FontSize="14"
+                                           VerticalAlignment="Bottom"
+                                           HorizontalAlignment="Left"
+                                           Margin="10,10,10,10"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
             </Border>
-            
         </WrapPanel>
     </StackPanel>
 </UserControl>
