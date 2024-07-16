@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WpfApp1.MVVM.ViewModel
 {
-    class SavedVersesViewModel
+    class VersePacksViewModel
     {
     }
 }

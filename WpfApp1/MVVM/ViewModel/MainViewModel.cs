@@ -9,14 +9,17 @@ namespace WpfApp1.MVVM.ViewModel
 {
     class MainViewModel : ObservableObject
     {
-
+        // Set RelayCommands here!
         public RelayCommand HomeViewCommand { get; set; }
-        
         public RelayCommand SavedVersesViewCommand { get; set; }
+        public RelayCommand VersePacksViewCommand { get; set; }
 
 
+        // Set ViewModels here!
         public HomeViewModel HomeVM { get; set; }
         public SavedVersesViewModel SavedVersesVM { get; set; }
+        public VersePacksViewModel VersePacksVM { get; set; }
+
 
         private object _currentView;
 
@@ -32,11 +35,14 @@ namespace WpfApp1.MVVM.ViewModel
 
         public MainViewModel()
         {
+            // Create new VMs here
             HomeVM = new HomeViewModel();
             SavedVersesVM = new SavedVersesViewModel();
+            VersePacksVM = new VersePacksViewModel();
 
             CurrentView = HomeVM;
 
+            // Set VM commands here!
             HomeViewCommand = new RelayCommand(o =>
             {
                 CurrentView = HomeVM;
@@ -45,6 +51,11 @@ namespace WpfApp1.MVVM.ViewModel
             SavedVersesViewCommand = new RelayCommand(o =>
             {
                 CurrentView = SavedVersesVM;
+            });
+
+            VersePacksViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = VersePacksVM;
             });
         }
     }

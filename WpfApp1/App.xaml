@@ -20,6 +20,10 @@
                 <view:SavedVersesView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewModel:VersePacksViewModel}">
+                <view:VersePacksView/>
+            </DataTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

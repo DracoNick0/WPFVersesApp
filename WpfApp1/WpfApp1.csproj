@@ -77,7 +77,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\VersePacks.xaml">
+    <Page Include="MVVM\View\VersePacksView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -94,14 +94,15 @@
     <Compile Include="MVVM\ViewModel\SavedVersesViewModel.cs" />
     <Compile Include="MVVM\ViewModel\HomeViewModel.cs" />
     <Compile Include="MVVM\ViewModel\MainViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\VersePacksViewModel.cs" />
     <Compile Include="MVVM\View\SavedVersesView.xaml.cs">
       <DependentUpon>SavedVersesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\VersePacks.xaml.cs">
-      <DependentUpon>VersePacks.xaml</DependentUpon>
+    <Compile Include="MVVM\View\VersePacksView.xaml.cs">
+      <DependentUpon>VersePacksView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

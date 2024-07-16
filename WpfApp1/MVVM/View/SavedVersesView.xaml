@@ -11,7 +11,7 @@
         <StackPanel Orientation="Vertical">
             <Border Width="300"
                     Height="65"
-                    Background="Blue"
+                    Background="#5bc3ff"
                     CornerRadius="10"
                     Margin="10,10,10,0">
                 <Grid>
@@ -40,7 +40,7 @@
 
             <Border Width="300"
                     Height="65"
-                    Background="Blue"
+                    Background="#5bc3ff"
                     CornerRadius="10"
                     Margin="10,10,10,0">
                 <Grid>
@@ -72,7 +72,7 @@
         <StackPanel Orientation="Vertical">
             <Border Width="300"
         Height="65"
-        Background="Blue"
+        Background="#5bc3ff"
         CornerRadius="10"
         Margin="10,10,10,0">
                 <Grid>
@@ -101,7 +101,7 @@
 
             <Border Width="300"
                     Height="65"
-                    Background="Blue"
+                    Background="#5bc3ff"
                     CornerRadius="10"
                     Margin="10,10,10,0">    
 

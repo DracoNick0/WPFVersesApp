@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace WpfApp1.MVVM.View
 {
     /// <summary>
-    /// Interaction logic for VersePacks.xaml
+    /// Interaction logic for VersePacksView.xaml
     /// </summary>
-    public partial class VersePacks : Page
+    public partial class VersePacksView : UserControl
     {
-        public VersePacks()
+        public VersePacksView()
         {
             InitializeComponent();
         }

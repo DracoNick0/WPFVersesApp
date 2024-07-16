@@ -38,8 +38,8 @@
                              Height="50"
                              Foreground="White"
                              FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"
                              IsChecked="True"
+                             Style="{StaticResource MenuButtonTheme}"
                              Command="{Binding HomeViewCommand}"/>
                 
                 <RadioButton Content="Saved Verses"
@@ -53,7 +53,8 @@
                              Height="50"
                              Foreground="White"
                              FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"/>
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding VersePacksViewCommand}"/>
                 
             </StackPanel>
 
