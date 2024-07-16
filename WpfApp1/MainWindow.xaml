@@ -7,7 +7,7 @@
         xmlns:viewModel="clr-namespace:WpfApp1.MVVM.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="920"
-        ResizeMode="NoResize">
+        ResizeMode="CanResize">
 
     <Window.DataContext>
         <viewModel:MainViewModel/>
@@ -70,10 +70,7 @@
                             Grid.Column="1"
                             Margin="0"
                             Content="{Binding CurrentView}"/>
-
-
-
         </Grid>
-
     </Border>
+    
 </Window>

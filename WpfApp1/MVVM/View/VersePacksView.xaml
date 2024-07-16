@@ -9,11 +9,18 @@
              Background="#1B1B1B">
 
     <StackPanel Orientation="Vertical">
-        <StackPanel Orientation="Horizontal">
+
+        <TextBlock Text="Verse Packs"
+                   Foreground="White"
+                   FontSize="28"
+                   HorizontalAlignment="Left"
+                   Margin="10,10,0,10"/>
+
+        <WrapPanel Orientation="Horizontal">
             <Border Width="200"
                     Height="200"
                     Background="#5bc3ff"
-                    Margin="10,10,10,0">
+                    Margin="10,0,10,0">
                 <Border.Clip>
                     <RectangleGeometry RadiusX="10"
                                        RadiusY="10"
@@ -27,43 +34,7 @@
                            VerticalAlignment="Top"
                            Margin="10,10,10,10"/>
             </Border>
-
-            <Border Width="200"
-                    Height="200"
-                    Background="#5bc3ff"
-                    Margin="10,10,10,0">
-                <Border.Clip>
-                    <RectangleGeometry RadiusX="10"
-                                       RadiusY="10"
-                                       Rect="0,0,200,200"/>
-                </Border.Clip>
-
-                <TextBlock Text="Pack 2"
-                           Foreground="White"
-                           FontSize="22"
-                           HorizontalAlignment="Center"
-                           VerticalAlignment="Top"
-                           Margin="10,10,10,10"/>
-            </Border>
-
-            <Border Width="200"
-                    Height="200"
-                    Background="#5bc3ff"
-                    Margin="10,10,10,0">
-                <Border.Clip>
-                    <RectangleGeometry RadiusX="10"
-                                       RadiusY="10"
-                                       Rect="0,0,200,200"/>
-                </Border.Clip>
-
-                <TextBlock Text="Pack 3"
-                           Foreground="White"
-                           FontSize="22"
-                           HorizontalAlignment="Center"
-                           VerticalAlignment="Top"
-                           Margin="10,10,10,10"/>
-            </Border>
-        </StackPanel>
+        </WrapPanel>
 
         <StackPanel Orientation="Horizontal">
 

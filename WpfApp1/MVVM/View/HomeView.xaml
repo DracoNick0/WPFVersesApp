@@ -11,10 +11,10 @@
                    Foreground="White"
                    FontSize="28"
                    HorizontalAlignment="Left"
-                   Margin="0,0,0,20"/>
+                   Margin="10,10,0,10"/>
 
         <StackPanel Orientation="Horizontal"
-                    Margin="0,0,0,10">
+                    Margin="10,0,0,10">
             <Border Width="400"
                     Height="200">
                 <Border.Background>
@@ -42,9 +42,9 @@
                                    FontSize="18"
                                    Margin="20,00,10,0"/>
 
-                        <TextBlock Text="No temptation has overtaken you that is not&#x0a;common to man. God is faithful, and he will&#x0a;not let you be tempted beyond your ability,&#x0a;but with the temptation he will also provide&#x0a;the way of escape, that you may be able to..."
+                        <TextBlock Text="No temptation has overtaken you that is not&#x0a;common to man. God is faithful, and he will not let&#x0a;you be tempted beyond your ability, but with the&#x0a;temptation he will also providethe way of escape,&#x0a;that you may be able to edure it."
                                    Foreground="LightGray"
-                                   FontSize="18"
+                                   FontSize="16"
                                    Margin="20,00,10,0"/>
                     </StackPanel>
                 </Grid>
@@ -79,7 +79,7 @@
         <StackPanel>
             <StackPanel.Resources>
                 <Style TargetType="{x:Type Border}">
-                    <Setter Property="Margin" Value="15,0,0,0"/>
+                    <Setter Property="Margin" Value="10,0,5,0"/>
                 </Style>
             </StackPanel.Resources>
             
@@ -87,7 +87,7 @@
                        Foreground="White"
                        FontSize="20"
                        HorizontalAlignment="Left"
-                       Margin="0,0,0,10"/>
+                       Margin="10,0,0,10"/>
 
             <StackPanel Orientation="Horizontal">
                 <Border Width="150"

@@ -7,42 +7,21 @@
              mc:Ignorable="d" 
              d:DesignHeight="465" d:DesignWidth="800"
              Background="#1B1B1B">
-    <StackPanel Orientation="Horizontal">
-        <StackPanel Orientation="Vertical">
+    <StackPanel Orientation="Vertical">
+
+        <TextBlock Text="All Verses"
+           Foreground="White"
+           FontSize="28"
+           HorizontalAlignment="Left"
+           Margin="10,10,0,10"/>
+
+        <WrapPanel Orientation="Horizontal">
+            
             <Border Width="300"
                     Height="65"
                     Background="#5bc3ff"
                     CornerRadius="10"
-                    Margin="10,10,10,0">
-                <Grid>
-                    <TextBlock Text="Reference"
-                                Foreground="White"
-                                FontSize="14"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Top"
-                                Margin="10,10,10,10"/>
-
-                    <TextBlock Text="Ver"
-                                Foreground="White"
-                                FontSize="14"
-                                HorizontalAlignment="Right"
-                                VerticalAlignment="Top"
-                                Margin="10,10,10,10"/>
-                    
-                    <TextBlock Text="Passage"
-                                Foreground="White"
-                                FontSize="14"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Bottom"
-                                Margin="10,10,10,10"/>
-                </Grid>
-            </Border>
-
-            <Border Width="300"
-                    Height="65"
-                    Background="#5bc3ff"
-                    CornerRadius="10"
-                    Margin="10,10,10,0">
+                    Margin="10,0,0,10">
                 <Grid>
                     <TextBlock Text="Reference"
                                 Foreground="White"
@@ -66,68 +45,7 @@
                                 Margin="10,10,10,10"/>
                 </Grid>
             </Border>
-
-        </StackPanel>
-
-        <StackPanel Orientation="Vertical">
-            <Border Width="300"
-        Height="65"
-        Background="#5bc3ff"
-        CornerRadius="10"
-        Margin="10,10,10,0">
-                <Grid>
-                    <TextBlock Text="Reference"
-                    Foreground="White"
-                    FontSize="14"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Top"
-                    Margin="10,10,10,10"/>
-
-                    <TextBlock Text="Ver"
-                    Foreground="White"
-                    FontSize="14"
-                    HorizontalAlignment="Right"
-                    VerticalAlignment="Top"
-                    Margin="10,10,10,10"/>
-
-                    <TextBlock Text="Passage"
-                    Foreground="White"
-                    FontSize="14"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Bottom"
-                    Margin="10,10,10,10"/>
-                </Grid>
-            </Border>
-
-            <Border Width="300"
-                    Height="65"
-                    Background="#5bc3ff"
-                    CornerRadius="10"
-                    Margin="10,10,10,0">    
-
-                <Grid>
-                    <TextBlock Text="Reference"
-                    Foreground="White"
-                    FontSize="14"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Top"
-                    Margin="10,10,10,10"/>
-
-                    <TextBlock Text="Ver"
-                    Foreground="White"
-                    FontSize="14"
-                    HorizontalAlignment="Right"
-                    VerticalAlignment="Top"
-                    Margin="10,10,10,10"/>
-
-                    <TextBlock Text="Passage"
-                    Foreground="White"
-                    FontSize="14"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Bottom"
-                    Margin="10,10,10,10"/>
-                </Grid>
-            </Border>
-        </StackPanel>
+            
+        </WrapPanel>
     </StackPanel>
 </UserControl>
