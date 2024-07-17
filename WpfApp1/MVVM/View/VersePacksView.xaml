@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:WpfApp1.MVVM.View"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800"
-             Background="#1B1B1B">
+             Background="#272537">
 
     <StackPanel Orientation="Vertical">
 

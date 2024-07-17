@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace WpfApp1.MVVM.ViewModel
 {
-    internal class VerseViewModel
+    class VerseViewModel
     {
+        public VerseViewModel(string verse)
+        {
+
+        }
     }
 }

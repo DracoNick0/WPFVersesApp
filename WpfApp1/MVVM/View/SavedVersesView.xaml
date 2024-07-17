@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:WpfApp1.MVVM.View"
              mc:Ignorable="d" 
              d:DesignHeight="465" d:DesignWidth="800"
-             Background="#1B1B1B">
+             Background="#272537">
     <StackPanel Orientation="Vertical">
 
         <TextBlock Text="All Verses"
@@ -17,10 +17,12 @@
 
         <WrapPanel Orientation="Horizontal">
             <Button Background="Transparent"
+                    BorderBrush="Transparent"
                     Width="300"
                     Height="65"
                     Command="{Binding VerseViewCommand}"
-                    Margin="10,10,0,10">
+                    CommandParameter="This is the command paramert!"
+                    Margin="10,0,0,10">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border Background="#5bc3ff"

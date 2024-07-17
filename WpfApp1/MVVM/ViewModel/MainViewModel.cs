@@ -50,7 +50,7 @@ namespace WpfApp1.MVVM.ViewModel
             VersePacksVM = new VersePacksViewModel();
             //VersePacksVM.ViewChanged += OnViewChanged;
 
-            VerseVM = new VerseViewModel();
+            //VerseVM = new VerseViewModel();
             //VerseVM.ViewChanged += OnViewChanged;
 
             CurrentView = HomeVM;
@@ -91,7 +91,7 @@ namespace WpfApp1.MVVM.ViewModel
                     CurrentView = VersePacksVM;
                     break;
                 case "verse":
-                    CurrentView = VerseVM;
+                    CurrentView = new VerseViewModel(SavedVersesVM.LastButtonClickedTag);
                     break;
             }
         }

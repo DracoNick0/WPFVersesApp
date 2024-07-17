@@ -29,22 +29,14 @@ namespace WpfApp1.MVVM.ViewModel
 
         public SavedVersesViewModel()
         {
-            VerseViewCommand = new RelayCommand(o =>
-            {
-                ViewChanged?.Invoke(this, "verse");
-            });
+            VerseViewCommand = new RelayCommand(VerseButtonClicked);
         }
 
-        private void Verse_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void VerseButtonClicked(object parameter)
         {
-            var verseButton = sender as Border;
+            this.lastButtonClickedTag = parameter as string;
 
-            if (verseButton != null)
-            {
-                this.lastButtonClickedTag = verseButton.Tag as string;
-
-                ViewChanged?.Invoke(this, "verse");
-            }
+            ViewChanged?.Invoke(this, "verse");
         }
     }
 }
