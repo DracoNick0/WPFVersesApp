@@ -81,6 +81,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MVVM\View\VerseView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Theme\MenuButtonTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -95,6 +99,7 @@
     <Compile Include="MVVM\ViewModel\HomeViewModel.cs" />
     <Compile Include="MVVM\ViewModel\MainViewModel.cs" />
     <Compile Include="MVVM\ViewModel\VersePacksViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\VerseViewModel.cs" />
     <Compile Include="MVVM\View\SavedVersesView.xaml.cs">
       <DependentUpon>SavedVersesView.xaml</DependentUpon>
     </Compile>
@@ -103,6 +108,9 @@
     </Compile>
     <Compile Include="MVVM\View\VersePacksView.xaml.cs">
       <DependentUpon>VersePacksView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\VerseView.xaml.cs">
+      <DependentUpon>VerseView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
