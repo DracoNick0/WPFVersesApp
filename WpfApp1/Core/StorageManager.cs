@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Markup;
 
 namespace WpfApp1.Core
 {
@@ -15,6 +16,33 @@ namespace WpfApp1.Core
         {
             AppDomain.CurrentDomain.ProcessExit += SaveToFile;
             LoadFromFile();
+        }
+
+        public bool AddVerse(string reference, string version, string passage)
+        {
+            if (loadedVerses.ContainsKey(reference))
+            {
+                // Verse already exists
+                return false;
+            }
+            else
+            {
+                // Set due date here
+                string dueDate = "XXXX";
+
+                // Add verse into dictionary
+                loadedVerses[reference] = dueDate + "|" + version + "|" + passage;
+
+                return true;
+            }
+        }
+
+        public void DeleteVerse(string reference)
+        {
+            if (loadedVerses.ContainsKey(reference))
+            {
+                loadedVerses.Remove(reference);
+            }
         }
 
         private void LoadFromFile()
@@ -37,7 +65,7 @@ namespace WpfApp1.Core
 
                         // Split the line into two parts
                         reference = line.Substring(0, indexOfDelimiter);
-                        details = line.Substring(indexOfDelimiter);
+                        details = line.Substring(indexOfDelimiter + 1);
 
                         // Save substring and delimiter in dictionary
                         this.loadedVerses[reference] = details;
@@ -56,7 +84,7 @@ namespace WpfApp1.Core
                 {
                     foreach (string key in this.loadedVerses.Keys)
                     {
-                        sw.WriteLine(key + loadedVerses[key]);
+                        sw.WriteLine(key + "|" + loadedVerses[key]);
                     }
                 }
             }
