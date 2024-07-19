@@ -42,7 +42,8 @@
                                    FontSize="18"
                                    Margin="20,00,10,0"/>
 
-                        <TextBlock Text="No temptation has overtaken you that is not&#x0a;common to man. God is faithful, and he will not let&#x0a;you be tempted beyond your ability, but with the&#x0a;temptation he will also providethe way of escape,&#x0a;that you may be able to edure it."
+                        <TextBlock Text="No temptation has overtaken you that is not common to man. God is faithful, and he will not let you be tempted beyond your ability, but with the temptation he will also providethe way of escape, that you may be able to edure it."
+                                   TextWrapping="Wrap"
                                    Foreground="LightGray"
                                    FontSize="16"
                                    Margin="20,00,10,0"/>
@@ -62,12 +63,13 @@
                 </Border.Background>
 
                 <StackPanel>
-                    <TextBlock Text="Question of&#x0a;the Day!"
+                    <TextBlock Text="Question of the Day!"
                                Foreground="White"
                                FontSize="28"
                                Margin="20,10,10,0"/>
 
-                    <TextBlock Text="Do you know any&#x0a;verses that can help&#x0a;me with temptation?"
+                    <TextBlock Text="Do you know any verses that can help me with temptation?"
+                               TextWrapping="Wrap"
                                Foreground="White"
                                FontSize="18"
                                Margin="20,10,10,10"/>
@@ -94,7 +96,7 @@
                         Height="150"
                         Background="#844eff"
                         CornerRadius="10">
-                    <TextBlock Text="Overdue&#x0a;Verses"
+                    <TextBlock Text="Overdue Verses"
                                 Foreground="White"
                                 FontSize="18"
                                 Margin="20,10,10,0"/>

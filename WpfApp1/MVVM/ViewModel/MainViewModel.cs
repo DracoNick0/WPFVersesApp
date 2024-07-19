@@ -12,6 +12,8 @@ namespace WpfApp1.MVVM.ViewModel
 {
     class MainViewModel : ObservableObject
     {
+        StorageManager storageManager = new StorageManager();
+
         // Set RelayCommands here!
         public RelayCommand HomeViewCommand { get; set; }
         public RelayCommand SavedVersesViewCommand { get; set; }
@@ -23,7 +25,7 @@ namespace WpfApp1.MVVM.ViewModel
         public HomeViewModel HomeVM { get; set; }
         public SavedVersesViewModel SavedVersesVM { get; set; }
         public VersePacksViewModel VersePacksVM { get; set; }
-        public VerseViewModel VerseVM { get; set; }
+        //public VerseViewModel VerseVM { get; set; }
 
 
         private object _currentView;
@@ -73,7 +75,7 @@ namespace WpfApp1.MVVM.ViewModel
 
             VerseViewCommand = new RelayCommand(o =>
             {
-                CurrentView = VerseVM;
+                //CurrentView = VerseVM;
             });
         }
 
