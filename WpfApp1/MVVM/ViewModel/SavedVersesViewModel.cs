@@ -14,7 +14,7 @@ namespace WpfApp1.MVVM.ViewModel
     {
         public event EventHandler<string> ViewChanged;
 
-        private Dictionary<string, string> loadedVerses;
+        private Dictionary<string, Verse> loadedVerses;
 
         // Set RelayCommands here!
         public RelayCommand VerseViewCommand { get; set; }
@@ -29,7 +29,7 @@ namespace WpfApp1.MVVM.ViewModel
             get { return lastButtonClickedParameter; }
         }
 
-        public SavedVersesViewModel(Dictionary<string, string> loadedVerses)
+        public SavedVersesViewModel(Dictionary<string, Verse> loadedVerses)
         {
             this.loadedVerses = loadedVerses;
 

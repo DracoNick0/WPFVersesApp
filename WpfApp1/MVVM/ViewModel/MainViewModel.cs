@@ -81,12 +81,10 @@ namespace WpfApp1.MVVM.ViewModel
                     CurrentView = VersePacksVM;
                     break;
                 case "verse":
-                    string reference = SavedVersesVM.LastButtonClickedParameter;
-                    string verse = this.storageManager.loadedVerses[reference];
-                    string dueDate = this.storageManager.loadedVerses[reference];
+                    // Find verse associated with button.
+                    Verse verse = storageManager.loadedVerses[SavedVersesVM.LastButtonClickedParameter];
 
-
-                    CurrentView = new VerseViewModel(SavedVersesVM.LastButtonClickedParameter);
+                    CurrentView = new VerseViewModel(verse);
                     break;
             }
         }

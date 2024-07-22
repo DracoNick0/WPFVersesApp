@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using WpfApp1.Core;
 
 namespace WpfApp1.MVVM.ViewModel
 {
     class VerseViewModel
     {
-        private string reference;
-
-        public VerseViewModel(string verse)
+        Verse verse;
+        public VerseViewModel(Verse verse)
         {
-            this.reference = verse;
+            this.verse = verse;
         }
     }
 }
