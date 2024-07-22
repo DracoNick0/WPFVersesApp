@@ -10,7 +10,7 @@ namespace WpfApp1.Core
 {
     class StorageManager
     {
-        public readonly Dictionary<string, string> loadedVerses = new Dictionary<string, string>();
+        public readonly Dictionary<string, Verse> loadedVerses = new Dictionary<string, Verse>();
 
         public StorageManager()
         {
@@ -20,6 +20,7 @@ namespace WpfApp1.Core
 
         public bool AddVerse(string reference, string version, string passage)
         {
+
             if (loadedVerses.ContainsKey(reference))
             {
                 // Verse already exists
@@ -27,11 +28,11 @@ namespace WpfApp1.Core
             }
             else
             {
-                // Set due date here
-                string dueDate = "XXXX";
+                // Create new verse
+                Verse newVerse = new Verse(reference, version, passage);
 
                 // Add verse into dictionary
-                loadedVerses[reference] = dueDate + "|" + version + "|" + passage;
+                loadedVerses[reference] = newVerse;
 
                 return true;
             }
@@ -54,21 +55,28 @@ namespace WpfApp1.Core
                 using (StreamReader sr = new StreamReader(versesTextFile))
                 {
                     string line;
-                    string reference;
-                    string details;
-                    int indexOfDelimiter;
+                    List<string> details;
+                    Verse verse;
+                    DateTime dueDate;
+                    int dueDateIncrement;
 
                     while ((line = sr.ReadLine()) != null)
                     {
-                        // Find delimiter in line
-                        indexOfDelimiter = line.IndexOf('|');
+                        // Parse all detail.
+                        // reference, version, passage, dueDate, dueDateIncrement
+                        details = new List<string>(line.Split('|'));
 
-                        // Split the line into two parts
-                        reference = line.Substring(0, indexOfDelimiter);
-                        details = line.Substring(indexOfDelimiter + 1);
+                        // string to DateTime
+                        dueDate = DateTime.Parse(details[3]);
 
-                        // Save substring and delimiter in dictionary
-                        this.loadedVerses[reference] = details;
+                        // string to int
+                        dueDateIncrement = int.Parse(details[4]);
+
+                        // Create new verse
+                        verse = new Verse(details[0], details[1], details[2], dueDate, dueDateIncrement);
+
+                        // Load verse into dictionary
+                        this.loadedVerses[details[0]] = verse;
                     }
                 }
             }
@@ -82,9 +90,13 @@ namespace WpfApp1.Core
             {
                 using (StreamWriter sw = new StreamWriter(versesTextFile))
                 {
+                    Verse tVerse;
+
                     foreach (string key in this.loadedVerses.Keys)
                     {
-                        sw.WriteLine(key + "|" + loadedVerses[key]);
+                        tVerse = this.loadedVerses[key];
+
+                        sw.WriteLine(key + "|" + tVerse.version + "|" + tVerse.passage + "|" + tVerse.dueDate + "|" + tVerse.dueDateIncrement);
                     }
                 }
             }
