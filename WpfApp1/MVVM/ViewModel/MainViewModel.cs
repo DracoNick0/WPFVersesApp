@@ -18,15 +18,11 @@ namespace WpfApp1.MVVM.ViewModel
         public RelayCommand HomeViewCommand { get; set; }
         public RelayCommand SavedVersesViewCommand { get; set; }
         public RelayCommand VersePacksViewCommand { get; set; }
-        public RelayCommand VerseViewCommand { get; set; }
-
 
         // Set ViewModels here!
         public HomeViewModel HomeVM { get; set; }
         public SavedVersesViewModel SavedVersesVM { get; set; }
         public VersePacksViewModel VersePacksVM { get; set; }
-        //public VerseViewModel VerseVM { get; set; }
-
 
         private object _currentView;
 
@@ -46,14 +42,11 @@ namespace WpfApp1.MVVM.ViewModel
             HomeVM = new HomeViewModel();
             //HomeVM.ViewChanged += OnViewChanged;
 
-            SavedVersesVM = new SavedVersesViewModel();
+            SavedVersesVM = new SavedVersesViewModel(storageManager.loadedVerses);
             SavedVersesVM.ViewChanged += OnViewChanged;
 
             VersePacksVM = new VersePacksViewModel();
             //VersePacksVM.ViewChanged += OnViewChanged;
-
-            //VerseVM = new VerseViewModel();
-            //VerseVM.ViewChanged += OnViewChanged;
 
             CurrentView = HomeVM;
 
@@ -72,11 +65,6 @@ namespace WpfApp1.MVVM.ViewModel
             {
                 CurrentView = VersePacksVM;
             });
-
-            VerseViewCommand = new RelayCommand(o =>
-            {
-                //CurrentView = VerseVM;
-            });
         }
 
         private void OnViewChanged(object sender, string newValue)
@@ -93,7 +81,12 @@ namespace WpfApp1.MVVM.ViewModel
                     CurrentView = VersePacksVM;
                     break;
                 case "verse":
-                    CurrentView = new VerseViewModel(SavedVersesVM.LastButtonClickedTag);
+                    string reference = SavedVersesVM.LastButtonClickedParameter;
+                    string verse = this.storageManager.loadedVerses[reference];
+                    string dueDate = this.storageManager.loadedVerses[reference];
+
+
+                    CurrentView = new VerseViewModel(SavedVersesVM.LastButtonClickedParameter);
                     break;
             }
         }

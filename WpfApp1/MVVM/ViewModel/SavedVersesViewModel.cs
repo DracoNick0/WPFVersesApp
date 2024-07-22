@@ -14,27 +14,31 @@ namespace WpfApp1.MVVM.ViewModel
     {
         public event EventHandler<string> ViewChanged;
 
+        private Dictionary<string, string> loadedVerses;
+
         // Set RelayCommands here!
         public RelayCommand VerseViewCommand { get; set; }
 
         // Set ViewModels here!
         public VerseViewModel VerseVM { get; set; }
 
-        private string lastButtonClickedTag;
+        private string lastButtonClickedParameter;
 
-        public string LastButtonClickedTag
+        public string LastButtonClickedParameter
         {
-            get { return lastButtonClickedTag; }
+            get { return lastButtonClickedParameter; }
         }
 
-        public SavedVersesViewModel()
+        public SavedVersesViewModel(Dictionary<string, string> loadedVerses)
         {
+            this.loadedVerses = loadedVerses;
+
             VerseViewCommand = new RelayCommand(VerseButtonClicked);
         }
 
         private void VerseButtonClicked(object parameter)
         {
-            this.lastButtonClickedTag = parameter as string;
+            this.lastButtonClickedParameter = parameter as string;
 
             ViewChanged?.Invoke(this, "verse");
         }

@@ -10,7 +10,7 @@ namespace WpfApp1.Core
 {
     class StorageManager
     {
-        readonly Dictionary<string, string> loadedVerses = new Dictionary<string, string>();
+        public readonly Dictionary<string, string> loadedVerses = new Dictionary<string, string>();
 
         public StorageManager()
         {

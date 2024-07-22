@@ -9,17 +9,11 @@ namespace WpfApp1.MVVM.ViewModel
 {
     class VerseViewModel
     {
-        private string verseName;
-        public string VerseName
-        {
-            get { return verseName; }
-            set { verseName = value; }
-        }
-
+        private string reference;
 
         public VerseViewModel(string verse)
         {
-            VerseName = verse;
+            this.reference = verse;
         }
     }
 }
