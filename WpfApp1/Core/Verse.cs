@@ -19,13 +19,13 @@ namespace WpfApp1.Core
         // Calculated at class initialization. The amount of days the current due date was away from the previous completion.
         public int daysTillDue;
 
-        public Verse(string tReference, string tVersion, string tPassage, DateTime tDueDate, int tDueDateIncrement)
+        public Verse(string tReference, string tVersion, string tPassage)
         {
             this.reference = tReference;
             this.version = tVersion;
             this.passage = tPassage;
-            this.dueDate = tDueDate;
-            this.dueDateIncrement = tDueDateIncrement;
+            this.dueDateIncrement = 1;
+            this.dueDate = calculateDueDate(this.dueDateIncrement);
 
             updateDaysTillDue();
         }
@@ -33,6 +33,16 @@ namespace WpfApp1.Core
         public void updateDaysTillDue()
         {
             this.daysTillDue = calculateDaysTillDue(this.dueDate);
+        }
+
+        public void increaseDueDateIncrement()
+        {
+            this.dueDateIncrement = (int)Math.Ceiling(this.dueDateIncrement * 1.5);
+        }
+
+        private DateTime calculateDueDate(double dueDateIncrement)
+        {
+            return DateTime.Now.AddDays(dueDateIncrement);
         }
 
         private int calculateDaysTillDue(DateTime tDueDate)
