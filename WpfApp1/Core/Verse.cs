@@ -27,15 +27,14 @@ namespace WpfApp1.Core
             this.dueDate = tDueDate;
             this.dueDateIncrement = tDueDateIncrement;
 
+            updateDaysTillDue();
+        }
+
+        public void updateDaysTillDue()
+        {
             this.daysTillDue = calculateDaysTillDue(this.dueDate);
         }
 
-        /*
-        private DateTime stringToDateTime(string dueDateString)
-        {
-            return DateTime.Parse(dueDateString);
-        }
-        */
         private int calculateDaysTillDue(DateTime tDueDate)
         {
             TimeSpan dayDifference = tDueDate - DateTime.Now;
