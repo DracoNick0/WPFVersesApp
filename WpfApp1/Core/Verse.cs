@@ -15,26 +15,31 @@ namespace WpfApp1.Core
         // The date when the verse is due.
         public DateTime dueDate;
         // If days to the next due date increase after each completion.
-        public bool dueDateIncrement;
+        public int dueDateIncrement;
         // Calculated at class initialization. The amount of days the current due date was away from the previous completion.
         public int daysTillDue;
 
-        public Verse(string reference, string version, string passage, string dueDate, string dueDateIncrement)
+        public Verse(string tReference, string tVersion, string tPassage, DateTime tDueDate, int tDueDateIncrement)
         {
-            this.dueDate = stringToDateTime(dueDate);
-            calculateDaysTillDue();
+            this.reference = tReference;
+            this.version = tVersion;
+            this.passage = tPassage;
+            this.dueDate = tDueDate;
+            this.dueDateIncrement = tDueDateIncrement;
+
+            this.daysTillDue = calculateDaysTillDue(this.dueDate);
         }
 
-        private DateTime stringToDateTime(string date)
+        /*
+        private DateTime stringToDateTime(string dueDateString)
         {
-
-            return DateTime.Now;
+            return DateTime.Parse(dueDateString);
         }
-
-        private void calculateDaysTillDue()
+        */
+        private int calculateDaysTillDue(DateTime tDueDate)
         {
-            TimeSpan dayDifference = this.dueDate - DateTime.Now;
-            this.daysTillDue = dayDifference.Days;
+            TimeSpan dayDifference = tDueDate - DateTime.Now;
+            return dayDifference.Days;
         }
     }
 }
