@@ -77,7 +77,8 @@ namespace WpfApp1.MVVM.ViewModel
                 Background = Brushes.Transparent,
                 BorderBrush = Brushes.Transparent,
                 CommandParameter = verse.reference,
-                Command = VerseViewCommand
+                Command = VerseViewCommand,
+                Margin = new Thickness(10,0,0,10)
             };
 
             // Create the ControlTemplate
@@ -94,8 +95,8 @@ namespace WpfApp1.MVVM.ViewModel
             FrameworkElementFactory grid = new FrameworkElementFactory(typeof(Grid));
 
             // Create the TextBlocks
-            FrameworkElementFactory textBlock1 = CreateTextBlock(verse.reference, Brushes.White, 14.0, VerticalAlignment.Top, HorizontalAlignment.Left, new Thickness(10));
-            FrameworkElementFactory textBlock2 = CreateTextBlock(verse.version, Brushes.White, 14.0, VerticalAlignment.Top, HorizontalAlignment.Right, new Thickness(10));
+            FrameworkElementFactory textBlock1 = CreateTextBlock(verse.reference + " " + verse.version, Brushes.White, 14.0, VerticalAlignment.Top, HorizontalAlignment.Left, new Thickness(10));
+            FrameworkElementFactory textBlock2 = CreateTextBlock(verse.daysTillDue.ToString(), Brushes.White, 14.0, VerticalAlignment.Top, HorizontalAlignment.Right, new Thickness(10));
             FrameworkElementFactory textBlock3 = CreateTextBlock(verse.passage, Brushes.White, 14.0, VerticalAlignment.Bottom, HorizontalAlignment.Left, new Thickness(10));
 
             // Add the TextBlocks to the Grid
