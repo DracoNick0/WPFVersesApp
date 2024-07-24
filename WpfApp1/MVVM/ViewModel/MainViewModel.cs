@@ -32,7 +32,7 @@ namespace WpfApp1.MVVM.ViewModel
             set
             { 
                 _currentView = value;
-                OnPropteryChanged();
+                OnPropertyChanged();
             }
         }
 

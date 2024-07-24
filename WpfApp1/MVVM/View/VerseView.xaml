@@ -13,12 +13,12 @@
         <WrapPanel Orientation="Horizontal">
 
 
-            <TextBlock Text="{Binding VerseName}"
+            <TextBlock Text="{Binding verse.reference}"
                        Foreground="White"
                        FontSize="28"
                        Margin="10,10,0,0"/>
 
-            <TextBlock Text="{Binding VerseVersion}"
+            <TextBlock Text="{Binding verse.version}"
                        Foreground="LightGray"
                        FontSize="20"
                        Margin="10,10,0,0"/>
