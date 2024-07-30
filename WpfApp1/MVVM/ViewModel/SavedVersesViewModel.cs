@@ -95,14 +95,22 @@ namespace WpfApp1.MVVM.ViewModel
             FrameworkElementFactory grid = new FrameworkElementFactory(typeof(Grid));
 
             // Create the TextBlocks
-            FrameworkElementFactory textBlock1 = CreateTextBlock(verse.reference + " " + verse.version, Brushes.White, 14.0, VerticalAlignment.Top, HorizontalAlignment.Left, new Thickness(10));
-            FrameworkElementFactory textBlock2 = CreateTextBlock(verse.daysTillDue.ToString(), Brushes.White, 14.0, VerticalAlignment.Top, HorizontalAlignment.Right, new Thickness(10));
-            FrameworkElementFactory textBlock3 = CreateTextBlock(verse.passage, Brushes.White, 14.0, VerticalAlignment.Bottom, HorizontalAlignment.Left, new Thickness(10));
+            FrameworkElementFactory referenceVersionTextBlock = CreateTextBlock(verse.reference + " " + verse.version, Brushes.White, 14.0, VerticalAlignment.Top, HorizontalAlignment.Left, new Thickness(10));
+            FrameworkElementFactory daysTillDueTextBlock = CreateTextBlock(verse.daysTillDue.ToString(), Brushes.White, 14.0, VerticalAlignment.Top, HorizontalAlignment.Right, new Thickness(10));
+            if (verse.daysTillDue < 0)
+            {
+                daysTillDueTextBlock = CreateTextBlock(verse.daysTillDue.ToString(), Brushes.Red, 14.0, VerticalAlignment.Top, HorizontalAlignment.Right, new Thickness(10));
+            }
+            else if (verse.daysTillDue == 0)
+            {
+                daysTillDueTextBlock = CreateTextBlock(verse.daysTillDue.ToString(), Brushes.Yellow, 14.0, VerticalAlignment.Top, HorizontalAlignment.Right, new Thickness(10));
+            }
+            FrameworkElementFactory passageTextBlock = CreateTextBlock(verse.passage, Brushes.White, 14.0, VerticalAlignment.Bottom, HorizontalAlignment.Left, new Thickness(10));
 
             // Add the TextBlocks to the Grid
-            grid.AppendChild(textBlock1);
-            grid.AppendChild(textBlock2);
-            grid.AppendChild(textBlock3);
+            grid.AppendChild(referenceVersionTextBlock);
+            grid.AppendChild(daysTillDueTextBlock);
+            grid.AppendChild(passageTextBlock);
 
             // Add the Grid to the Border
             border.AppendChild(grid);

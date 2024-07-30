@@ -10,19 +10,19 @@
 
     <StackPanel Orientation="Vertical">
 
-        <WrapPanel Orientation="Horizontal">
+        <WrapPanel x:Name="Title"
+                   Orientation="Horizontal">
 
-
-            <TextBlock Text="{Binding verse.reference}"
+            <TextBlock Text="{Binding Reference}"
                        Foreground="White"
                        FontSize="28"
                        Margin="10,10,0,0"/>
 
-            <TextBlock Text="{Binding verse.version}"
+            <TextBlock Text="{Binding Version}"
                        Foreground="LightGray"
                        FontSize="20"
                        Margin="10,10,0,0"/>
-
+            
         </WrapPanel>
         
     </StackPanel>

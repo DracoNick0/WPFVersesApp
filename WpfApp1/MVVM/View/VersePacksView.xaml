@@ -17,14 +17,14 @@
                    Margin="10,10,0,10"/>
 
         <WrapPanel Orientation="Horizontal">
-            <Border Width="200"
-                    Height="200"
+            <Border Width="150"
+                    Height="150"
                     Background="#5bc3ff"
                     Margin="10,0,10,0">
                 <Border.Clip>
                     <RectangleGeometry RadiusX="10"
                                        RadiusY="10"
-                                       Rect="0,0,200,200"/>
+                                       Rect="0,0,150,150"/>
                 </Border.Clip>
 
                 <TextBlock Text="Pack 1"
