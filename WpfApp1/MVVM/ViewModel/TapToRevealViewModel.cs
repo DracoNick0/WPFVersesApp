@@ -7,21 +7,29 @@ using WpfApp1.Core;
 
 namespace WpfApp1.MVVM.ViewModel
 {
-    class TapToRevealViewModel
+    class TapToRevealViewModel : ObservableObject
     {
-        private List<string> fullPassage;
+        private List<string> fullPassage = new List<string>();
+        private int index = 0;
 
         private string revealedPassage;
         public string RevealedPassage
         {
             get { return revealedPassage; }
+            set
+            {
+                revealedPassage = value;
+                OnPropertyChanged(nameof(RevealedPassage));
+            }
         }
 
+        public RelayCommand revealButtonClicked { get; set; }
 
         public TapToRevealViewModel(Verse verse)
         {
             char[] delimiters = new char[] { ',', '.', ';', ':' };
-            int prevDelimiter = 0;
+            int prevDelimiter = -1;
+            string partOfPassage;
 
             for (int i = 0; i < verse.passage.Length; i++)
             {
@@ -29,10 +37,22 @@ namespace WpfApp1.MVVM.ViewModel
                 {
                     if (verse.passage[i] == delimiter)
                     {
-                        //fullPassage.Add(verse.passage.Substring(prevDelimiter, i - prevDelimiter + 1));
+                        partOfPassage = verse.passage.Substring(prevDelimiter + 1, i - prevDelimiter);
+                        this.fullPassage.Add(partOfPassage);
                         prevDelimiter = i;
                     }
                 }
+            }
+
+            revealButtonClicked = new RelayCommand(RevealText);
+        }
+
+        private void RevealText(object parameter)
+        {
+            if (index != fullPassage.Count)
+            {
+                RevealedPassage += fullPassage[index];
+                index++;
             }
         }
 
