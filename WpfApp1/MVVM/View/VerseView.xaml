@@ -24,6 +24,19 @@
                        Margin="10,10,0,0"/>
             
         </WrapPanel>
-        
+
+        <ItemsControl ItemsSource="{Binding GameButtons}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal"
+                       x:Name="GameButtonContainer">
+
+                        <!-- Buttons are added in dynamically via SavedVersesViewModel -->
+
+                    </WrapPanel>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
+
     </StackPanel>
 </UserControl>

@@ -9,7 +9,7 @@
              Background="#272537">
     <StackPanel Orientation="Vertical">
 
-        <TextBlock Text="All Verses"
+        <TextBlock Text="Saved Verses"
            Foreground="White"
            FontSize="28"
            HorizontalAlignment="Left"
