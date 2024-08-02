@@ -95,10 +95,16 @@ namespace WpfApp1.MVVM.ViewModel
                     CurrentView = new TapToRevealViewModel(verse);
                     break;
                 case "Passage Memory":
+                    verse = storageManager.loadedVerses[SavedVersesVM.LastButtonClickedParameter];
+                    CurrentView = new PassageMemoryViewModel(verse);
                     break;
                 case "Word Bank":
+                    verse = storageManager.loadedVerses[SavedVersesVM.LastButtonClickedParameter];
+                    //CurrentView = new WordBankViewModel(verse);
                     break;
                 case "Fill in the Blanks":
+                    verse = storageManager.loadedVerses[SavedVersesVM.LastButtonClickedParameter];
+                    //CurrentView = new FillInTheBlankViewModel(verse);
                     break;
             }
         }

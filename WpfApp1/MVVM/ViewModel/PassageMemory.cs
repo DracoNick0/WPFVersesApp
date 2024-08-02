@@ -27,11 +27,12 @@ namespace WpfApp1.MVVM.ViewModel
 
         public PassageMemoryViewModel(Verse verse)
         {
-            char[] delimiters = new char[] { ' ' };
+            char[] delimiters = new char[] { ' ', '\0' };
             int prevDelimiter = -1;
             string partOfPassage;
+            int i = 0;
 
-            for (int i = 0; i < verse.passage.Length; i++)
+            for (; i < verse.passage.Length; i++)
             {
                 foreach (char delimiter in delimiters)
                 {
@@ -43,6 +44,9 @@ namespace WpfApp1.MVVM.ViewModel
                     }
                 }
             }
+
+            partOfPassage = verse.passage.Substring(prevDelimiter + 1, i - prevDelimiter - 1);
+            this.fullPassage.Add(partOfPassage);
 
             revealButtonClicked = new RelayCommand(RevealText);
         }
