@@ -10,6 +10,13 @@ namespace WpfApp1.MVVM.ViewModel
 {
     class SavedVersesViewModel : ObservableObject
     {
+        private Dictionary<string, Verse> loadedVerses;
+        private string lastButtonClickedParameter;
+        public string LastButtonClickedParameter
+        {
+            get { return lastButtonClickedParameter; }
+        }
+
         // UPDATE THIS WHEN NEW VERSE IS ADDED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         private ObservableCollection<Button> verseButtons = new ObservableCollection<Button>();
         public ObservableCollection<Button> VerseButtons
@@ -22,19 +29,11 @@ namespace WpfApp1.MVVM.ViewModel
             }
         }
 
-        private Dictionary<string, Verse> loadedVerses;
-        private string lastButtonClickedParameter;
-
         // Set RelayCommands here!
         public RelayCommand VerseViewCommand { get; set; }
 
         // Set ViewModels here!
         public VerseViewModel VerseVM { get; set; }
-
-        public string LastButtonClickedParameter
-        {
-            get { return lastButtonClickedParameter; }
-        }
 
         public SavedVersesViewModel(Dictionary<string, Verse> loadedVerses)
         {

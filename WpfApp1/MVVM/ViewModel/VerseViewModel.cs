@@ -9,6 +9,12 @@ namespace WpfApp1.MVVM.ViewModel
 {
     class VerseViewModel : ObservableObject
     {
+        private string lastButtonClickedParameter;
+        public string LastButtonClickedParameter
+        {
+            get { return lastButtonClickedParameter; }
+        }
+
         private ObservableCollection<Button> gameButtons = new ObservableCollection<Button>();
         public ObservableCollection<Button> GameButtons
         {
@@ -40,11 +46,16 @@ namespace WpfApp1.MVVM.ViewModel
             get { return version; }
         }
 
+        // Set RelayCommands here!
+        public RelayCommand GameViewCommand { get; set; }
+
         public VerseViewModel(Verse verse)
         {
             this.verse = verse;
             this.reference = verse.reference;
             this.version = verse.version;
+
+            GameViewCommand = new RelayCommand(GameButtonClicked);
 
             gameButtons.Add(CreateGameButton("Tap to Reveal"));
             gameButtons.Add(CreateGameButton("Passage Memory"));
@@ -61,8 +72,8 @@ namespace WpfApp1.MVVM.ViewModel
                 Height = 65,
                 Background = Brushes.Transparent,
                 BorderBrush = Brushes.Transparent,
-                CommandParameter = verse.reference,
-                // Command = VerseViewCommand,
+                CommandParameter = gameName,
+                Command = GameViewCommand,
                 Margin = new Thickness(10, 0, 0, 10)
             };
 
@@ -80,10 +91,10 @@ namespace WpfApp1.MVVM.ViewModel
             FrameworkElementFactory grid = new FrameworkElementFactory(typeof(Grid));
 
             // Create the TextBlocks
-            FrameworkElementFactory tapToRevealTextBlock = CreateTextBlock(gameName, Brushes.White, 14.0, new Thickness(10));
+            FrameworkElementFactory gameTextBlock = CreateTextBlock(gameName, Brushes.White, 14.0, new Thickness(10));
 
             // Add the TextBlocks to the Grid
-            grid.AppendChild(tapToRevealTextBlock);
+            grid.AppendChild(gameTextBlock);
 
             // Add the Grid to the Border
             border.AppendChild(grid);
@@ -110,6 +121,16 @@ namespace WpfApp1.MVVM.ViewModel
             textBlock.SetValue(FrameworkElement.MarginProperty, margin);
 
             return textBlock;
+        }
+
+        public event EventHandler<string> ViewChanged;
+        private void GameButtonClicked(object parameter)
+        {
+            this.lastButtonClickedParameter = verse.reference;
+
+            string parameterString = parameter.ToString();
+
+            ViewChanged?.Invoke(this, parameterString);
         }
     }
 }

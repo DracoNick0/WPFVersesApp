@@ -29,6 +29,10 @@
                 <view:VerseView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewModel:TapToRevealViewModel}">
+                <view:TapToRevealView/>
+            </DataTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

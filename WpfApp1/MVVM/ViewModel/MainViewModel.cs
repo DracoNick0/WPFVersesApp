@@ -69,6 +69,7 @@ namespace WpfApp1.MVVM.ViewModel
 
         private void OnViewChanged(object sender, string newValue)
         {
+            Verse verse = null;
             switch(newValue)
             {
                 case "home":
@@ -82,9 +83,22 @@ namespace WpfApp1.MVVM.ViewModel
                     break;
                 case "verse":
                     // Find verse associated with button.
-                    Verse verse = storageManager.loadedVerses[SavedVersesVM.LastButtonClickedParameter];
+                    verse = storageManager.loadedVerses[SavedVersesVM.LastButtonClickedParameter];
 
-                    CurrentView = new VerseViewModel(verse);
+                    // Setup viewmodel, change view, subscribe view.
+                    VerseViewModel VerseVM = new VerseViewModel(verse);
+                    CurrentView = VerseVM;
+                    VerseVM.ViewChanged += OnViewChanged;
+                    break;
+                case "Tap to Reveal":
+                    verse = storageManager.loadedVerses[SavedVersesVM.LastButtonClickedParameter];
+                    CurrentView = new TapToRevealViewModel(verse);
+                    break;
+                case "Passage Memory":
+                    break;
+                case "Word Bank":
+                    break;
+                case "Fill in the Blanks":
                     break;
             }
         }

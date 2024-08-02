@@ -29,7 +29,8 @@ namespace WpfApp1.MVVM.ViewModel
                 {
                     if (verse.passage[i] == delimiter)
                     {
-                        fullPassage.Add(verse.passage.Substring(prevDelimiter, i - prevDelimiter + 1));
+                        //fullPassage.Add(verse.passage.Substring(prevDelimiter, i - prevDelimiter + 1));
+                        prevDelimiter = i;
                     }
                 }
             }
