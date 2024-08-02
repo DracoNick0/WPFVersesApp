@@ -33,6 +33,10 @@
                 <view:TapToRevealView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewModel:PassageMemoryViewModel}">
+                <view:PassageMemoryView/>
+            </DataTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

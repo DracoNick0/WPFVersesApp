@@ -79,6 +79,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MVVM\View\PassageMemory.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MVVM\View\TapToRevealView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -108,6 +112,7 @@
     <Compile Include="MVVM\ViewModel\SavedVersesViewModel.cs" />
     <Compile Include="MVVM\ViewModel\HomeViewModel.cs" />
     <Compile Include="MVVM\ViewModel\MainViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\PassageMemory.cs" />
     <Compile Include="MVVM\ViewModel\TapToRevealViewModel.cs" />
     <Compile Include="MVVM\ViewModel\VersePacksViewModel.cs" />
     <Compile Include="MVVM\ViewModel\VerseViewModel.cs" />
@@ -116,6 +121,9 @@
     </Compile>
     <Compile Include="MVVM\View\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\PassageMemory.xaml.cs">
+      <DependentUpon>PassageMemory.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\TapToRevealView.xaml.cs">
       <DependentUpon>TapToRevealView.xaml</DependentUpon>
