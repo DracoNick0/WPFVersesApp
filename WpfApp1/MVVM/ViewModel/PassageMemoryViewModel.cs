@@ -47,15 +47,16 @@ namespace WpfApp1.MVVM.ViewModel
 
             TextBoxChangedCommand = new RelayCommand(OnTextChanged);
 
-            revealedPassage = string.Empty;
+            textBoxText = "Type first letter of each word in the passage.";
         }
 
         private void OnTextChanged(object textBoxText)
         {
             string textBoxString = textBoxText as string;
-            // If the full passage hasn't been revealed yet
-            if (textBoxString != revealedPassage)
+
+            if (textBoxString != revealedPassage && textBoxString != string.Empty)
             {
+                // If the full passage hasn't been revealed yet
                 if (index != fullPassage.Count)
                 {
                     if (textBoxString[textBoxString.Length - 1] == fullPassage[index].ToLower()[0])

@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Remoting.Channels;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
-using System.Windows.Input;
-using WpfApp1.Core;
+﻿using WpfApp1.Core;
 
 namespace WpfApp1.MVVM.ViewModel
 {

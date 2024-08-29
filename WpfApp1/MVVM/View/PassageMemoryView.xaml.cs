@@ -18,7 +18,6 @@ namespace WpfApp1.MVVM.View
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            // RevealedPassageTextBox.Focus();
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -32,6 +31,18 @@ namespace WpfApp1.MVVM.View
 
                     // Move user cursor to end of text.
                     textBox.CaretIndex = textBox.Text.Length;
+                }
+            }
+        }
+
+        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is PassageMemoryViewModel passageMemoryViewModel)
+            {
+                var textBox = sender as TextBox;
+                if (textBox != null)
+                {
+                    textBox.Text = string.Empty;
                 }
             }
         }
